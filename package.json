@@ -1,14 +1,16 @@
 {
-  "name": "node-setup",
+  "name": "node-setup-graphql",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Diego Fernandes <diego.schell.f@gmail.com>",
+  "author": "Enrico Da Silva <camponogara5@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpileOnly --ignore-watch node_modules --no-notify src/server.ts",
-    "test": "jest"
+    "test": "jest",
+    "lint:fix": "./node_modules/.bin/eslint . --fix",
+    "lint:run": "./node_modules/.bin/eslint ."
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -37,6 +39,8 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@graphql-modules/core": "^0.7.17",
+    "apollo-server": "^2.15.0",
+    "graphql-tag": "^2.10.3"
   }
 }
